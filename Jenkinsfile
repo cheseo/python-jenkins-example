@@ -1,9 +1,5 @@
 pipeline {
-	agent { docker {
-			image 'tiangolo/uwsgi-nginx-flask:python3.12'
-			args '--entrypoint=/bin/bash' 
-		} 
-	}
+	agent { dockerfile true }
 	stages {
 		stage('test'){
 			steps {
