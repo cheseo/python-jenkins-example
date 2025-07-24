@@ -1,0 +1,21 @@
+Python example webapp to use jenkins pipeline.
+
+Uses custom dockerfile to test configuration, using flask and curl.
+
+When a test passes, the app is terminated, updated, and then ran again using systemd.
+
+*.tf:
+ - Setup test instance using terraform. 
+
+Dockerfile:
+ - The dockerfile to setup test environment
+
+new-instance:
+ - Create a new instance (or update existing one) and update dns mapping.
+
+Jenkinsfile:
+ - The actual jenkinsfile
+
+cloud-init.sh:
+ - Sets up python, caddy, and systemd service to autostart app.
+
